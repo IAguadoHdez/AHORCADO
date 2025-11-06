@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #242233;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+h1, .intentos, .contenedor-letras, .tematica {
+    margin-bottom: 30px;
+}
+/* SELECTOR TEMATICAS */ 
+
+.tematica select{
+    margin-left: 10px;
+    border: none;
+    border-radius: 6px;
+    padding: 7px;
+    width: 150px;
+    text-align: center;
+    background-color: #3b3b4f;
+    color: #fff;
+    font-size: 1rem;
+}
+
+
+
+/* CONTENEDOR PRINCIPAL DEL ABECEDARIO */
+.contenedor-letras {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.fila {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* LETRAS INDIVIDUALES */
+.letra {
+    background-color: #3b3b4f;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.letra:hover {
+    background-color: #57576b;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.letra.seleccionado {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.letra.bloqueado {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+span {
+    color: #6feaf6;
+}
+
+/* DIV DE PALABRA OCULTA */
+
+.palabraOculta {
+    display: flex;
+    gap: 15px;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.palabraOculta span {
+    display: inline-block;
+    width: 50px;
+    height: 60px;
+    border-bottom: 3px solid #6feaf6;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-weight: bold;
+}
