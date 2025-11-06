@@ -6,9 +6,17 @@
     <title>Juego Ahorcado</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body>      
+    <div class="contenedor-sesion">
+        <div class="sesion-usuario">
+            <h3>Introduzca nombre de usuario</h3>
+             <input type="text" name="user" placeholder="Ingresa usuario...">
+             <button type="submit">Ingresar</button>
+        </div>
+    </div>
     <main>
         <h1>Juego del Ahorcado</h1>
+
         <div class="tematica"> <!--No incluido aun-->
             <label>Temática del juego </label>
             <select>
@@ -57,6 +65,9 @@
         </div>
         <div class="erroresCometidos">
             <p>Has cometido <span>X</span> errores</p>  
+        </div>
+        <div class="contador">
+            <p>Tiempo restante: <span id="tiempo">00:00:00</span></p>
         </div>   
     </main>
     <script src="script.js"></script>

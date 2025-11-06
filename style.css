@@ -21,6 +21,54 @@ main {
 h1, .intentos, .contenedor-letras, .tematica {
     margin-bottom: 30px;
 }
+
+/* SELECTOR DE INICIO DE SESION */ 
+
+.contenedor-sesion {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.sesion-usuario {
+    color: #fff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+    max-width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+}
+.sesion-usuario h3 {
+    margin: 0;
+}
+.sesion-usuario input {
+    border: 1px solid #57576b;
+    outline: none;
+}
+.sesion-usuario input,button {
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    width: 70%;
+}
+
+.sesion-usuario button {
+    cursor: pointer;
+}
+
+
 /* SELECTOR TEMATICAS */ 
 
 .tematica select{
@@ -104,4 +152,9 @@ span {
     line-height: 60px;
     color: #fff;
     font-weight: bold;
+}
+
+.contador {
+    margin-top: 10px;
+    font-size: 2rem;
 }
