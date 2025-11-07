@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const tiempoSpan = document.getElementById("tiempo");
   const PopupUsuario = document.querySelector(".contenedor-sesion");
   const btnUsuario = document.querySelector(".sesion-usuario button");
-  const palabra = "PACO";
+  const nombreUsuario = document.querySelector(".sesion-suaurio input");
+  const palabra = "PAPER";
 
   let progreso = Array(palabra.length).fill("_"); // crea un guion por cada letra
   let errores = 0; 
@@ -63,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(intervalo); // Elimina intervalo
   }
 
+  function UsuarioValido(usuario){
+
+  }
 
   
   mostrarProgreso();
@@ -72,7 +76,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Eventos 
 
   btnUsuario.addEventListener("click", () => {
+    if(UsuarioValido){
       PopupUsuario.style.display = "none";
+    }
+
   })
 
   letras.forEach((letra) => {
