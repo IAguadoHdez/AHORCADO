@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       errorUsuario.style.display = "block";
     } 
 
+
     return valido;
   }
 
