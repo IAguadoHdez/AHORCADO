@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnUsuario = document.querySelector(".sesion-usuario button");
   const nombreUsuarioInput = document.querySelector(".sesion-usuario input");
   const errorUsuario = document.querySelector(".error-usuario");
-
+  const mensajeGanadoPerdido = document.getElementById("win-lose");
   // Datos del juego
   const palabra = "PAPER";
   let progreso = Array(palabra.length).fill("_"); // crea un guion por cada letra
@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(intervalo); // Elimina intervalo
   }
 
+  // Funcion para validar el nombre de usuario 
   function UsuarioValido(nombre){
     const valido = nombre && nombre.trim().length >= 3;
     if(!valido) {
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return valido;
   }
 
+  // Funcion para crear un array con el usuario , palabra secreta, tiempo final y los errores que ha cometido 
   function guardarUsuario() {
     const tiempoFinal = `${minutos < 10 ? "0" + minutos : minutos}:${segundos < 10 ? "0" + segundos : segundos}`; // formatear tiempo
     const datoUsuario = {
@@ -94,10 +96,42 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(usuarios); 
   }
   
+  // Funcion que crea una cuenta atras interna para restar intentos si no escoge ninguna letra
+
+  let tiempoRestante = 10; // Tiempo restante para quitar vida
+  let cuentaAtrasIntervalo = null;
+
+  function iniciarCuentaAtras() {
+    cuentaAtrasIntervalo = setInterval(() => {
+      tiempoRestante--; // Se resta uno en cada segundo que pase
+
+      // Si el tiempo es menor o igual a 0 subo un error y devuelvo la cuenta atras a 10 
+      if(tiempoRestante <= 0) {
+        errores++;
+        actualizarContadores();
+        tiempoRestante = 10;
+      }
+      // Si al final consumes todo el tiempo Game Over
+      if(errores >= intentosMaximos){
+        detenerCrono();
+        detenerCuentaAtras();
+        guardarUsuario();
+      }
+    },1000);
+  }
+
+  function reiniciarCuentaAtrasInterno(){
+    tiempoRestante = 10;
+  }
+
+  function detenerCuentaAtras() {
+    clearInterval(cuentaAtrasIntervalo);
+    cuentaAtrasIntervalo = null;
+  }
+
   mostrarProgreso();
   actualizarContadores();
   actualizarTiempo();
-  
   // Eventos 
 
   btnUsuario.addEventListener("click", () => {
@@ -109,10 +143,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  //Comprobación de que el juego este iniciado
+  let juegoIniciado = false;
 
   letras.forEach((letra) => {
     letra.addEventListener("click", () => {
-      iniciarCronometro();
+
+      if(!juegoIniciado) {
+        iniciarCronometro();
+        iniciarCuentaAtras();
+        juegoIniciado = true;
+      }
+
       const letraSeleccionada = letra.innerText;
 
       // Si la letra ya fue seleccionada o bloqueada, no hacer nada
@@ -120,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (palabra.includes(letraSeleccionada)) {
         letra.classList.add("seleccionado"); // letra correcta
+        reiniciarCuentaAtrasInterno(); // Ahora aqui reiniciamos el cronometro cada vez que pulsa una letra
 
         // Reemplazar los guiones por la letra correcta
         for (let i = 0; i < palabra.length; i++) {
@@ -128,10 +171,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         mostrarProgreso();
 
+
         // Verificar si he ganado
         if (!progreso.includes("_")) { // Si no hay más guiones que añadir pues has adivinado la palabra
           detenerCrono();
+          detenerCuentaAtras();
           guardarUsuario();
+          mensajeGanadoPerdido.style.color = "green";
+          mensajeGanadoPerdido.innerHTML = "¡Has Ganado!";
         }
       } else {
         letra.classList.add("bloqueado"); // Si hay errores pues sigue dando error en la letra
@@ -141,7 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (errores >= intentosMaximos) {
           detenerCrono();
+          detenerCuentaAtras();
           guardarUsuario();
+          mensajeGanadoPerdido.style.color = "red";
+          mensajeGanadoPerdido.innerHTML = `¡Has perdido la palabra era <span>${palabra}</span>`;
         }
       }
     });

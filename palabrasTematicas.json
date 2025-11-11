@@ -1,0 +1,39 @@
+{
+  "deportes": [
+    "REALMADRID",
+    "BARCELONA",
+    "MANCITY",
+    "LIVERPOOL",
+    "BAYERN",
+    "JUVENTUS",
+    "CHELSEA",
+    "PSG",
+    "ARSENAL",
+    "INTER",
+    "ACMILAN",
+    "ATLÉTICODEMADRID",
+    "SEVILLA",
+    "BORUSSIA",
+    "NAPOLI"
+  ],
+  "cine": [
+    "INCEPTION",
+    "TITANIC",
+    "GLADIATOR",
+    "AVATAR",
+    "JOKER",
+    "COCO",
+    "JURASSICPARK",
+    "AMELIE"
+  ],
+  "videojuegos": [
+    "MARIO",
+    "ZELDA",
+    "POKEMON",
+    "FIFA",
+    "MINECRAFT",
+    "FORTNITE",
+    "CALLDUTY",
+    "OVERWATCH"
+  ]
+}
