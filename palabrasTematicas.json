@@ -1,39 +1,37 @@
 {
-  "deportes": [
-    "REALMADRID",
-    "BARCELONA",
-    "MANCITY",
-    "LIVERPOOL",
-    "BAYERN",
-    "JUVENTUS",
-    "CHELSEA",
-    "PSG",
-    "ARSENAL",
-    "INTER",
-    "ACMILAN",
-    "ATLÉTICODEMADRID",
-    "SEVILLA",
-    "BORUSSIA",
-    "NAPOLI"
-  ],
-  "cine": [
-    "INCEPTION",
-    "TITANIC",
-    "GLADIATOR",
-    "AVATAR",
-    "JOKER",
-    "COCO",
-    "JURASSICPARK",
-    "AMELIE"
-  ],
-  "videojuegos": [
-    "MARIO",
-    "ZELDA",
-    "POKEMON",
-    "FIFA",
-    "MINECRAFT",
-    "FORTNITE",
-    "CALLDUTY",
-    "OVERWATCH"
+  "palabras": [
+    { "texto": "REALMADRID", "tematica": "deportes" },
+    { "texto": "BARCELONA", "tematica": "deportes" },
+    { "texto": "MANCITY", "tematica": "deportes" },
+    { "texto": "LIVERPOOL", "tematica": "deportes" },
+    { "texto": "BAYERN", "tematica": "deportes" },
+    { "texto": "JUVENTUS", "tematica": "deportes" },
+    { "texto": "CHELSEA", "tematica": "deportes" },
+    { "texto": "PSG", "tematica": "deportes" },
+    { "texto": "ARSENAL", "tematica": "deportes" },
+    { "texto": "INTER", "tematica": "deportes" },
+    { "texto": "ACMILAN", "tematica": "deportes" },
+    { "texto": "ATLÉTICODEMADRID", "tematica": "deportes" },
+    { "texto": "SEVILLA", "tematica": "deportes" },
+    { "texto": "BORUSSIA", "tematica": "deportes" },
+    { "texto": "NAPOLI", "tematica": "deportes" },
+
+    { "texto": "INCEPTION", "tematica": "cine" },
+    { "texto": "TITANIC", "tematica": "cine" },
+    { "texto": "GLADIATOR", "tematica": "cine" },
+    { "texto": "AVATAR", "tematica": "cine" },
+    { "texto": "JOKER", "tematica": "cine" },
+    { "texto": "COCO", "tematica": "cine" },
+    { "texto": "JURASSICPARK", "tematica": "cine" },
+    { "texto": "AMELIE", "tematica": "cine" },
+
+    { "texto": "MARIO", "tematica": "videojuegos" },
+    { "texto": "ZELDA", "tematica": "videojuegos" },
+    { "texto": "POKEMON", "tematica": "videojuegos" },
+    { "texto": "FIFA", "tematica": "videojuegos" },
+    { "texto": "MINECRAFT", "tematica": "videojuegos" },
+    { "texto": "FORTNITE", "tematica": "videojuegos" },
+    { "texto": "CALLDUTY", "tematica": "videojuegos" },
+    { "texto": "OVERWATCH", "tematica": "videojuegos" }
   ]
 }

@@ -1,78 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego Ahorcado</title>
+    <title>Ahorcado</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>      
+
+<body>
     <div class="contenedor-sesion">
         <div class="sesion-usuario">
-            <h3>Introduzca nombre de usuario</h3>
+            <form id="formUsuario">
                 <input type="text" name="user" placeholder="Ingresa usuario...">
-                <button type="submit">Ingresar</button>
                 <p class="error-usuario"></p>
-
+                <select id="selector-tematica">
+                    <option value="deportes">Deportes</option>
+                    <option value="cine">Cine</option>
+                    <option value="videojuegos">Videojuegos</option>
+                </select>
+                <button type="submit">Ingresar</button>
+            </form>
         </div>
     </div>
     <main>
         <h1>Juego del Ahorcado</h1>
         <p id="win-lose"><span></span></p>
-        <div class="tematica"> <!--No incluido aun-->
-            <label>Temática del juego </label>
-            <select>
-                <option>deportes</option>
-                <option>cine</option>
-                <option>Videojuegos</option>
-            </select>
+
+        <div class="intentos">
+            <p>Selecciona una letra, le quedan <span></span> intentos</p>
+            <div class="palabraOculta"></div>
+            <div class="contenedor-letras">
+                <div class="fila">
+                    <div class="letra">A</div>
+                    <div class="letra">B</div>
+                    <div class="letra">C</div>
+                    <div class="letra">D</div>
+                    <div class="letra">E</div>
+                    <div class="letra">F</div>
+                    <div class="letra">G</div>
+                    <div class="letra">H</div>
+                </div>
+                <div class="fila">
+                    <div class="letra">I</div>
+                    <div class="letra">J</div>
+                    <div class="letra">K</div>
+                    <div class="letra">L</div>
+                    <div class="letra">M</div>
+                    <div class="letra">N</div>
+                    <div class="letra">Ñ</div>
+                    <div class="letra">O</div>
+                </div>
+                <div class="fila">
+                    <div class="letra">P</div>
+                    <div class="letra">Q</div>
+                    <div class="letra">R</div>
+                    <div class="letra">S</div>
+                    <div class="letra">T</div>
+                    <div class="letra">U</div>
+                    <div class="letra">V</div>
+                    <div class="letra">W</div>
+                </div>
+                <div class="fila">
+                    <div class="letra">X</div>
+                    <div class="letra">Y</div>
+                    <div class="letra">Z</div>
+                </div>
+            </div>
+            <div class="errores-cometidos">
+                <p>Has cometido <span></span> errores</p>
+            </div>
+            <div class="contador">
+                <p>Tiempo restante <span id="tiempo"></span></p>
+            </div>
         </div>
-        <div class="intentos"><p>Selecciona una letra, le quedan <span> X </span> intentos.</p></div>
-        <div class="palabraOculta"></div>
-        <div class="contenedor-letras">
-            <div class="fila">
-                <div class="letra">A</div>
-                <div class="letra">B</div>
-                <div class="letra">C</div>
-                <div class="letra">D</div>
-                <div class="letra">E</div>
-                <div class="letra">F</div>
-                <div class="letra">G</div>
-                <div class="letra">H</div>
-            </div>
-            <div class="fila">
-                <div class="letra">I</div>
-                <div class="letra">J</div>
-                <div class="letra">K</div>
-                <div class="letra">L</div>
-                <div class="letra">M</div>
-                <div class="letra">N</div>
-                <div class="letra">Ñ</div>
-                <div class="letra">O</div>
-            </div>
-            <div class="fila">
-                <div class="letra">P</div>
-                <div class="letra">Q</div>
-                <div class="letra">R</div>
-                <div class="letra">S</div>
-                <div class="letra">T</div>
-                <div class="letra">U</div>
-                <div class="letra">V</div>
-                <div class="letra">W</div>
-            </div>
-            <div class="fila">
-                <div class="letra">X</div>
-                <div class="letra">Y</div>
-                <div class="letra">Z</div>
-            </div>
-        </div>
-        <div class="erroresCometidos">
-            <p>Has cometido <span>X</span> errores</p>  
-        </div>
-        <div class="contador">
-            <p>Tiempo restante: <span id="tiempo">00:00:00</span></p>
-        </div>   
+        <aside class="leaderboard-container">
+            <h2>Ranking</h2>
+            <p class="leaderboard-user"><span></span></p>
+        </aside>
     </main>
     <script src="script.js"></script>
 </body>
+
 </html>
